@@ -4,8 +4,21 @@
 .header-menu{
   width: 260px;
   background-color: $transparentBlack;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: lighter;
+  border-top: 2px solid $darkerWhite;
+  position: relative;
+
+  .arrow-up{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $darkerWhite;
+    position: absolute;
+    left: 120px;
+    top: -10px;
+  }
 
   ul{
     width: 100%;
