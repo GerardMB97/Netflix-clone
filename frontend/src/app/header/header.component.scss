@@ -1,9 +1,16 @@
 @import '../../assets/styles/colors.scss';
 @import '../../assets//styles//mixins.scss';
+
+ .background--transparent{
+    background-color: transparent;
+    transition: background-color 0.75s ease;
+  }
+
 header{
   @include flex(row, space-between, center);
   box-sizing: border-box;
   background-color: $black;
+  transition: background-color 0.75s ease;
   font-size: 10px;
   height: 45px;
   padding: 0 3%;
@@ -72,6 +79,4 @@ header{
       border-radius: 5px;
     }
   }
-
-
 }
