@@ -1,16 +1,21 @@
 @import '../../assets/styles/colors.scss';
 @import '../../assets//styles//mixins.scss';
 header{
-  @include flex(row, flex-start, center);
+  @include flex(row, space-between, center);
   box-sizing: border-box;
   background-color: $black;
   font-size: 10px;
   height: 45px;
-  padding-left: 5%;
+  padding: 0 3%;
   position: fixed;
   width: 100%;
 
-  img{
+  .left-area{
+    width: 35%;
+    height: 100%;
+    @include flex(row, space-between, center);
+
+    img{
     height: 55%;
     width: auto;
     margin-right: 30px;
@@ -18,7 +23,7 @@ header{
   span{
     @include flex(row, center, center );
     color: $white;
-
+    position: relative;
   }
   .arrow-down {
   width: 0;
@@ -28,4 +33,45 @@ header{
   border-top: 5px solid $white;
   margin-left: 5px;
 }
+
+.drop-down {
+  position: absolute;
+  top: 50px;
+  left: -255%;
+}
+  }
+
+  .right-area{
+    width: 35%;
+    height: 100%;
+    @include flex(row, space-between, center);
+    color: $white;
+
+    .material-icons{
+      font-weight: 100;
+      font-size: 16px;
+    }
+
+    .notifications{
+      position: relative;
+
+      .notifications__alert{
+        position: absolute;
+        background-color: red;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        left: 8px;
+        top: -1px
+      }
+    }
+
+    img{
+      height: 80%;
+      width: auto;
+      border-radius: 5px;
+    }
+  }
+
+
 }

@@ -1,1 +1,14 @@
-<p>header-menu works!</p>
+<div class="header-menu">
+  <span class="arrow-up"></span>
+  <nav>
+    <ul>
+      <li
+        *ngFor="let option of menuOptions"
+        (click)="onSelect(option)"
+        [class.selected]="option === this.selectedOption"
+      >
+        {{ option }}
+      </li>
+    </ul>
+  </nav>
+</div>
