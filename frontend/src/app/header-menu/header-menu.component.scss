@@ -27,12 +27,16 @@
     li{
       width: 100%;
       height: 50px;
+      color: $gray;
       @include flex(column, center, center);
 
       a{
         text-decoration: none;
       }
     }
+     li.selected{
+        color: $white;
+      }
   }
 
 }
