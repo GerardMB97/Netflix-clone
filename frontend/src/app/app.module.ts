@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 
@@ -13,7 +14,8 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
