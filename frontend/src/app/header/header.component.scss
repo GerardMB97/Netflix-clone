@@ -34,8 +34,17 @@ header{
     @include flex(row, center, center );
     color: $white;
     position: relative;
+
   }
+
+  .drop-down {
+  position: absolute;
+  top: 50px;
+  left: -255%;
+}
+
   .arrow-down {
+  all: unset;
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
@@ -44,11 +53,6 @@ header{
   margin-left: 5px;
 }
 
-.drop-down {
-  position: absolute;
-  top: 50px;
-  left: -255%;
-}
   }
 
   .right-area{
