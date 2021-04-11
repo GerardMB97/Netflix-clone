@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import menuOptions from './constants'
+import menuOptions from '../../assets/constants/menuOptions'
 
 @Component({
   selector: 'app-header-menu',

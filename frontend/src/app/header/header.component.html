@@ -1,13 +1,26 @@
 <header>
   <div class="left-area">
     <img src="../../assets/Images/Netflix-Logo.png" alt="Netflix Logo" />
-    <span>
+    <span class="mobile-menu">
       <span>Menu</span>
       <span class="arrow-down"></span>
       <app-header-menu class="drop-down"></app-header-menu>
     </span>
+
+    <span class="desktop-menu">
+      <ul>
+        <li
+          *ngFor="let option of menuOptions"
+          (click)="onSelect(option)"
+          [class.selected]="option === this.selectedOption"
+        >
+          {{ option }}
+        </li>
+      </ul>
+    </span>
   </div>
   <div class="right-area">
+    <span class="desktop-option">INFANTIL</span>
     <span class="material-icons"> redeem </span>
     <span class="notifications">
       <span class="material-icons"> notifications </span>

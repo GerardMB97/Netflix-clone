@@ -3,14 +3,14 @@
 
  .background--transparent{
     background-color: transparent;
-    transition: background-color 0.75s ease;
+    transition: background-color 0.5s ease;
   }
 
 header{
   @include flex(row, space-between, center);
   box-sizing: border-box;
   background-color: $black;
-  transition: background-color 0.75s ease;
+  transition: background-color 0.5s ease;
   font-size: 10px;
   height: 45px;
   padding: 0 3%;
@@ -27,7 +27,10 @@ header{
     width: auto;
     margin-right: 30px;
   }
-  span{
+  .desktop-menu{
+    display: none;
+  }
+  .mobile-menu{
     @include flex(row, center, center );
     color: $white;
     position: relative;
@@ -74,9 +77,64 @@ header{
     }
 
     img{
-      height: 80%;
+      height: 30px;
       width: auto;
       border-radius: 5px;
     }
+  }
+}
+
+@media screen and (min-width: 885px){
+  header{
+     height: 70px;
+     padding: 0 4%;
+     font-size: 1vw;
+
+     .left-area{
+      width: 45%;
+
+      img{
+        height: 75%;
+      }
+       .mobile-menu{
+         display: none;
+       }
+
+       .desktop-menu{
+        margin-left: 2%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+
+        ul{
+          all: unset;
+          width: 100%;
+          @include flex (row, space-between, center)
+        }
+
+        li{
+          list-style: none;
+          color: $gray;
+          cursor: pointer;
+        }
+
+        li.selected{
+          color: $white
+        }
+       }
+     }
+     .right-area{
+         width: 20%;
+
+         .material-icons{
+          font-size: 25px;
+         }
+         .notifications{
+           .notifications__alert{
+           left: 15px;
+         }
+         }
+
+       }
   }
 }

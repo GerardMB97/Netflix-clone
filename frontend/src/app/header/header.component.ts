@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener} from "@angular/core";
+import menuOptions from '../../assets/constants/menuOptions'
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,13 @@ import { HostListener} from "@angular/core";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  menuOptions = menuOptions;
+  selectedOption = 'Inicio'
+
+  onSelect(option: string): void{
+    this.selectedOption = option;
+  }
 
   constructor() { }
 
