@@ -7,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  expand():void{
-    document.querySelector('input')?.classList.add('expanded');
-  }
   constructor() { }
 
   ngOnInit(): void {

@@ -2,6 +2,7 @@
 @import '../../assets//styles//mixins.scss';
 .search-bar{
   position: relative;
+  width: 15px;
   @include flex(row, center, center);
 
   button{

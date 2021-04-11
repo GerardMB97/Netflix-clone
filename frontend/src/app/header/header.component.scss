@@ -57,6 +57,10 @@ header{
     @include flex(row, space-between, center);
     color: $white;
 
+    .desktop-option{
+      display: none;
+    }
+
     .material-icons{
       font-weight: 100;
       font-size: 16px;
@@ -125,6 +129,10 @@ header{
      }
      .right-area{
          width: 20%;
+
+         .desktop-option{
+            display: flex;
+          }
 
          .material-icons{
           font-size: 25px;
