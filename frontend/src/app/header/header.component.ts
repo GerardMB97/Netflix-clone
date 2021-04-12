@@ -10,10 +10,15 @@ import menuOptions from '../../assets/constants/menuOptions'
 export class HeaderComponent implements OnInit {
 
   menuOptions = menuOptions;
-  selectedOption = 'Inicio'
+  selectedOption = 'Inicio';
+  showMenu = false;
 
   onSelect(option: string): void{
     this.selectedOption = option;
+  }
+
+  toggle():void{
+    this.showMenu =!this.showMenu
   }
 
   constructor() { }
@@ -32,5 +37,4 @@ onWindowScroll() {
         document.querySelector('header')?.classList.remove('background--transparent');
     }
 }
-
 }

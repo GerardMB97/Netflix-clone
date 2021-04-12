@@ -2,7 +2,7 @@
 @import '../../assets//styles//mixins.scss';
 
  .background--transparent{
-    background-color: transparent;
+    background-color: rgba(21,21,21, 0.2);
     transition: background-color 0.5s ease;
   }
 
@@ -34,8 +34,17 @@ header{
     @include flex(row, center, center );
     color: $white;
     position: relative;
+
   }
+
+  .drop-down {
+  position: absolute;
+  top: 50px;
+  left: -255%;
+}
+
   .arrow-down {
+  all: unset;
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
@@ -44,11 +53,6 @@ header{
   margin-left: 5px;
 }
 
-.drop-down {
-  position: absolute;
-  top: 50px;
-  left: -255%;
-}
   }
 
   .right-area{
@@ -56,6 +60,10 @@ header{
     height: 100%;
     @include flex(row, space-between, center);
     color: $white;
+
+    .desktop-option{
+      display: none;
+    }
 
     .material-icons{
       font-weight: 100;
@@ -125,6 +133,10 @@ header{
      }
      .right-area{
          width: 20%;
+
+         .desktop-option{
+            display: flex;
+          }
 
          .material-icons{
           font-size: 25px;

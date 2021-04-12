@@ -1,0 +1,33 @@
+@import '../../assets/styles/colors';
+@import '../../assets//styles//mixins.scss';
+.search-bar{
+  position: relative;
+  width: 15px;
+  @include flex(row, center, center);
+
+  button{
+  all: unset;
+}
+  .material-icons{
+    font-size: 20px;
+    position: absolute;
+    left: -220px;
+    top: -10px;
+  }
+
+input{
+  all: unset;
+  position: absolute;
+  left: -230px;
+  top: -20px;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 35px;
+  background-color: $transparentBlack;
+  color: $white;
+  border: 1px solid $white;
+  width: 250px;
+  height: 40px;
+}
+}
+
