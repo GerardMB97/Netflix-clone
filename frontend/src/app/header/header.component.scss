@@ -2,7 +2,7 @@
 @import '../../assets//styles//mixins.scss';
 
  .background--transparent{
-    background-color: transparent;
+    background-color: rgba(21,21,21, 0.2);
     transition: background-color 0.5s ease;
   }
 
