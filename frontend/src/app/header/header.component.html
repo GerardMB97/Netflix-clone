@@ -3,8 +3,8 @@
     <img src="../../assets/Images/Netflix-Logo.png" alt="Netflix Logo" />
     <span class="mobile-menu">
       <span>Menu</span>
-      <span class="arrow-down"></span>
-      <app-header-menu class="drop-down"></app-header-menu>
+      <button class="arrow-down" (click)="toggle()"></button>
+      <app-header-menu *ngIf="showMenu" class="drop-down"></app-header-menu>
     </span>
 
     <span class="desktop-menu">
@@ -20,6 +20,7 @@
     </span>
   </div>
   <div class="right-area">
+    <app-search-bar class="desktop-option"></app-search-bar>
     <span class="desktop-option">INFANTIL</span>
     <span class="material-icons"> redeem </span>
     <span class="notifications">
