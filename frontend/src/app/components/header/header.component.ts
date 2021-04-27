@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HostListener} from "@angular/core";
-import menuOptions from '../../assets/constants/menuOptions'
+import { HostListener} from '@angular/core';
+import menuOptions from '../../../assets/constants/menuOptions';
 
 @Component({
   selector: 'app-header',
@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
     this.selectedOption = option;
   }
 
-  toggle():void{
-    this.showMenu =!this.showMenu
+  toggle(): void {
+    this.showMenu =  !this.showMenu;
   }
 
   constructor() { }
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   @HostListener('window:scroll', [])
-onWindowScroll() {
+onWindowScroll(): void {
     const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
     if (scrollOffset <= 50) {
