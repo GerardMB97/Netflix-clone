@@ -19,15 +19,19 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-    private handleError(error: HttpErrorResponse):Observable<Error> {
-        let errorMessage = '';
-        if (error.error instanceof ErrorEvent) {
-            // client-side error
-            errorMessage = `Error: ${error.error.message}`;
-        } else {
-            // server-side error
-            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+  private handleError(error: HttpErrorResponse):Observable<Error> {
+      let errorMessage = '';
+      if (error.error instanceof ErrorEvent) {
+          // client-side error
+          errorMessage = `Error: ${error.error.message}`;
+      } else {
+          // server-side error
+          errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
         }
-        return throwError(errorMessage);
+      return throwError(errorMessage);
     }
+
+  private getPopularMovies(){
+    return this.http.get(this.GET_POPULAR, { params: { api_key: this.API_KEY } })
+  }
 }
