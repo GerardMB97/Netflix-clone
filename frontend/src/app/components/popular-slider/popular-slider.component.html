@@ -1,1 +1,8 @@
-<p *ngFor="let movie of movies$ | async | slice: 0:10">{{ movie.title }}</p>
+<section class="popular-slider">
+  <div
+    class="popular__card"
+    *ngFor="let movie of movies$ | async | slice: 0:10; let i = index"
+  >
+    <span>{{ i + 1 }}</span>
+  </div>
+</section>
