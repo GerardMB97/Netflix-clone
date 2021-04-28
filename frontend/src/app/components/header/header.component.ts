@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener} from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
 import menuOptions from '../../../assets/constants/menuOptions';
+import { Movie } from 'src/app/models/movies.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +13,12 @@ import menuOptions from '../../../assets/constants/menuOptions';
 export class HeaderComponent implements OnInit {
 
   menuOptions = menuOptions;
+
   selectedOption = 'Inicio';
+
   showMenu = false;
+
+  movies$: Observable<Movie> | undefined
 
   onSelect(option: string): void{
     this.selectedOption = option;
@@ -27,7 +34,7 @@ export class HeaderComponent implements OnInit {
   }
 
   @HostListener('window:scroll', [])
-onWindowScroll(): void {
+  onWindowScroll(): void {
     const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
     if (scrollOffset <= 50) {
