@@ -10,7 +10,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   encapsulation: ViewEncapsulation.None
 })
 export class PopularSliderComponent implements OnInit {
-  title = 'Top 10 most popular today.'
+  title = 'Top 10 most popular today'
 
   movies$: Observable<Movie[]> | undefined
 

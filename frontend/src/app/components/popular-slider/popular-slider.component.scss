@@ -28,3 +28,11 @@
   overflow-x: scroll;
   @include flex(row, flex-start, center);
 }
+
+@media screen and (min-width: 885px){
+  h3{
+    font-size: 20px;
+    margin-top: -30px;
+    margin-bottom: 20px;
+  }
+}
