@@ -1,8 +1,14 @@
 <section class="popular-slider">
   <div
     class="popular__card"
-    *ngFor="let movie of movies$ | async | slice: 0:10; let i = index"
+    *ngFor="
+      let movie of movies$ | async | slice: 0:10;
+      let i = index;
+      let last = last
+    "
+    [ngClass]="{ 'last-child': last }"
   >
-    <span>{{ i + 1 }}</span>
+    <span class="number">{{ i + 1 }}</span>
+    <img [src]="posterBaseUrl + movie.poster_path" alt="" />
   </div>
 </section>

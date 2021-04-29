@@ -9,7 +9,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./popular-slider.component.scss']
 })
 export class PopularSliderComponent implements OnInit {
-  popularRankingPositions = new Array(5).fill(1).map((x,i)=> i+1)
+  posterBaseUrl = 'https://image.tmdb.org/t/p/w200'
 
   movies$: Observable<Movie[]> | undefined
 
