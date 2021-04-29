@@ -1,14 +1,14 @@
+<h3>{{ title }}</h3>
 <section class="popular-slider">
-  <div
-    class="popular__card"
+  <app-popular-card
     *ngFor="
       let movie of movies$ | async | slice: 0:10;
       let i = index;
       let last = last
     "
+    [movie]="movie"
+    [rank]="i + 1"
     [ngClass]="{ 'last-child': last }"
   >
-    <span class="number">{{ i + 1 }}</span>
-    <img [src]="posterBaseUrl + movie.poster_path" alt="" />
-  </div>
+  </app-popular-card>
 </section>
