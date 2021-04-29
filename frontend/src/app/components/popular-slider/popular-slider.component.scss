@@ -1,0 +1,30 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets//styles/colors';
+@import '../../../assets/styles/fonts';
+
+.last-child{
+  .popular__card{
+    img{
+      position: relative;
+      left: 80px;
+    }
+  }
+}
+
+ h3{
+    color: white;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    padding-left: 15px;
+  }
+.popular-slider{
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-top: -5px;
+  padding-left: 15px;
+  overflow-x: scroll;
+  @include flex(row, flex-start, center);
+}

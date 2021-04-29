@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import menuOptions from '../../assets/constants/menuOptions'
+import menuOptions from '../../../assets/constants/menuOptions';
 
 @Component({
   selector: 'app-header-menu',
@@ -10,8 +10,8 @@ export class HeaderMenuComponent implements OnInit {
   menuOptions = menuOptions;
   selectedOption = 'Inicio';
 
-  onSelect(option: string):void{
-    this.selectedOption = option
+  onSelect(option: string): void {
+    this.selectedOption = option;
   }
   constructor() { }
 
