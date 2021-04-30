@@ -12,8 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PopularSliderComponent } from './components/popular-slider/popular-slider.component';
 import { PopularCardComponent } from './components/popular-card/popular-card.component';
 import { MovieHoverCardComponent } from './components/movie-hover-card/movie-hover-card.component';
-
-
+import { MovieGenres } from './pipes/movieGenres.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,8 @@ import { MovieHoverCardComponent } from './components/movie-hover-card/movie-hov
     BillboardComponent,
     PopularSliderComponent,
     PopularCardComponent,
-    MovieHoverCardComponent
+    MovieHoverCardComponent,
+    MovieGenres
   ],
   imports: [
     BrowserModule,
