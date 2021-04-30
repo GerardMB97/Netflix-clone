@@ -1,1 +1,8 @@
-<p>movie-hover-card works!</p>
+<div class="short-detail">
+  <div class="short-detail__poster">
+    <img [src]="posterBaseUrl + movie.poster_path" alt="" />
+  </div>
+  <h3 class="short-detail__title">{{ movie.title }}</h3>
+  <p>release date: {{ movie.release_date }}</p>
+  <div></div>
+</div>

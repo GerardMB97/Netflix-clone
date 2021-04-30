@@ -1,0 +1,31 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/colors';
+.short-detail{
+  width: 350px;
+  height: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid red;
+  position: absolute;
+  top: 50px;
+  z-index: 5;
+  background-color: $backgroundColor;
+  color: $white;
+  @include flex(column, flex-start, flex-start);
+
+  .short-detail__poster{
+    height: 200px;
+    overflow: hidden;
+
+    img{
+      width: 350px;
+      height: auto;
+    }
+  }
+  .short-detail__title{
+    margin-top: 50px;
+  }
+  p{
+    padding-left: 15px;
+  }
+}

@@ -1,4 +1,4 @@
-interface Movie {
+export interface Movie {
   poster_path: string | null
   adult: boolean
   overview: string

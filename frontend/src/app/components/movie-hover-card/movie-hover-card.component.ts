@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from 'src/app/models/movies.model';
 
 @Component({
   selector: 'app-movie-hover-card',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-hover-card.component.scss']
 })
 export class MovieHoverCardComponent implements OnInit {
+  @Input() movie!:Movie
+
+  posterBaseUrl = 'https://image.tmdb.org/t/p/w400'
 
   constructor() { }
 
