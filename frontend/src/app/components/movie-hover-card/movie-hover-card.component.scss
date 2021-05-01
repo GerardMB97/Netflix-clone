@@ -11,6 +11,7 @@
   z-index: 5;
   background-color: $backgroundColor;
   color: $white;
+  pointer-events: none;
   @include flex(column, flex-start, flex-start);
 
   .short-detail__poster{
@@ -48,6 +49,6 @@
         all: unset;
         margin-left: 15px;
       }
+    }
   }
-}
 }

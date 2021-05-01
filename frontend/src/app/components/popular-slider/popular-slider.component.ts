@@ -17,6 +17,8 @@ export class PopularSliderComponent implements OnInit {
 
   genres$!: Observable<Genre[]>
 
+  hoverMovie!: null | Movie
+
   constructor(private moviesService: MoviesService) { }
   ngOnInit(): void {
     this.movies$ = this.moviesService.movies$

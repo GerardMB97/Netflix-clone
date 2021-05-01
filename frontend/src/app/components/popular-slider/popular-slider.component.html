@@ -8,7 +8,16 @@
     "
     [ngClass]="{ 'last-child': last }"
   >
-    <app-popular-card [movie]="movie" [rank]="i + 1"> </app-popular-card>
-    <app-movie-hover-card [movie]="movie"></app-movie-hover-card>
+    <app-popular-card
+      (mouseover)="hoverMovie = movie"
+      (mouseleave)="hoverMovie = null"
+      [movie]="movie"
+      [rank]="i + 1"
+    >
+    </app-popular-card>
+    <app-movie-hover-card
+      [movie]="movie"
+      [ngClass]="hoverMovie === movie ? 'show-detail' : 'hide-detail'"
+    ></app-movie-hover-card>
   </div>
 </section>
