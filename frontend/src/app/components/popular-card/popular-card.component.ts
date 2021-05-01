@@ -11,7 +11,7 @@ export class PopularCardComponent implements OnInit {
 
   @Input() rank!:number
 
-    posterBaseUrl = 'https://image.tmdb.org/t/p/w200'
+  posterBaseUrl = 'https://image.tmdb.org/t/p/w200'
 
   constructor() { }
 

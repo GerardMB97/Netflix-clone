@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { MoviesService } from '../services/movies.service';
 import { Genre } from '../models/genres.model';
 
@@ -12,11 +12,15 @@ export class MovieGenres implements PipeTransform {
   genres$ = this.moviesService.genres$
 
   transform(movieGenres: number[]){
-    return this.genres$.subscribe(
-      obj => obj.filter(
-        (genre: Genre) => movieGenres.includes(genre.id)).map(
-          (genre: Genre) => genre.name));
+
+    movieGenres
+
+
+    return this.genres$.pipe(
+      map((genres)  =>  genres.filter(genre => movieGenres.includes(genre.id)).map(genre => genre.name))
+      )
   }
+
 
   constructor(private moviesService: MoviesService) { }
 }

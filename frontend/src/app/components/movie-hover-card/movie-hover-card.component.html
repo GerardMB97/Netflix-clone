@@ -2,7 +2,14 @@
   <div class="short-detail__poster">
     <img [src]="posterBaseUrl + movie.poster_path" alt="" />
   </div>
-  <h3 class="short-detail__title">{{ movie.title }}</h3>
-  <p>release date: {{ movie.release_date }}</p>
-  <div></div>
+  <div class="short-detail__info">
+    <h3 class="short-detail__title">{{ movie.title }}</h3>
+    <p>release date: {{ movie.release_date }}</p>
+    <ul>
+      <span>Genres :</span>
+      <li *ngFor="let genre of movie.genre_ids | genres | async">
+        {{ genre }}
+      </li>
+    </ul>
+  </div>
 </div>

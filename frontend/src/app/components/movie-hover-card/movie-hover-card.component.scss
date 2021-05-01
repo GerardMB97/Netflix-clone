@@ -22,10 +22,32 @@
       height: auto;
     }
   }
-  .short-detail__title{
-    margin-top: 10px;
+  .short-detail__info{
+    height: 200px;
+    @include flex(column, space-around, flex-start);
+
+    .short-detail__title{
+      margin-top: 10px;
+    }
+    p{
+      padding-left: 15px;
+    }
+
+    ul{
+      all: unset;
+      margin-top: 15px;
+      padding-right: 15px;
+      flex-wrap: wrap;
+      @include flex(row, flex-start, flex-start);
+
+      span{
+        padding-left: 15px;
+      }
+
+      li{
+        all: unset;
+        margin-left: 15px;
+      }
   }
-  p{
-    padding-left: 15px;
-  }
+}
 }
