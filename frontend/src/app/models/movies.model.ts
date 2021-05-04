@@ -1,4 +1,4 @@
-interface Movie {
+export interface Movie {
   poster_path: string | null
   adult: boolean
   overview: string
@@ -13,4 +13,10 @@ interface Movie {
   vote_count: number
   video: boolean
   vote_average: number
+}
+
+export interface Video {
+  id: string,
+  key: string,
+  site: string,
 }

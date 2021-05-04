@@ -8,8 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { BillboardComponent } from './components/billboard/billboard.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { PopularSliderComponent } from './components/popular-slider/popular-slider.component';
+import { PopularCardComponent } from './components/popular-card/popular-card.component';
+import { MovieHoverCardComponent } from './components/movie-hover-card/movie-hover-card.component';
+import { MovieGenres } from './pipes/movieGenres.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,17 @@ import { BillboardComponent } from './components/billboard/billboard.component';
     HeaderComponent,
     HeaderMenuComponent,
     SearchBarComponent,
-    BillboardComponent
+    BillboardComponent,
+    PopularSliderComponent,
+    PopularCardComponent,
+    MovieHoverCardComponent,
+    MovieGenres
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   exports: [
   ],
