@@ -15,9 +15,8 @@ export class MovieGenres implements PipeTransform {
 
     movieGenres
 
-
     return this.genres$.pipe(
-      map((genres)  =>  genres.filter(genre => movieGenres.includes(genre.id)).map(genre => genre.name))
+      map((genres)  => genres.filter(genre => movieGenres.includes(genre.id)).map(genre => genre.name))
       )
   }
 

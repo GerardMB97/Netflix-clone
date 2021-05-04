@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Movie } from '../models/movies.model';
+import { Movie, Video } from '../models/movies.model';
 import { Genre } from '../models/genres.model';
 
 @Injectable({
@@ -20,7 +20,9 @@ export class MoviesService {
 
   movies$ = new Subject<Movie[]>();
 
-  genres$ = new Subject<Genre[]>()
+  genres$ = new Subject<Genre[]>();
+
+  video$ = new Subject<Video>();
 
   constructor(private http: HttpClient) { }
 
@@ -53,6 +55,12 @@ export class MoviesService {
         genres => {console.log('ls genres', genres.genres); this.genres$.next(genres.genres)},
         err => (this.handleError(err))
       )
+    )
+  }
+  getMovieTrailer({id}:Movie) : Observable<any> {
+    return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/videos`, { params: { api_key: this.API_KEY } })
+    .pipe(
+      map((results:any) => results.results[0])
     )
   }
 }

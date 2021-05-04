@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/movies.model';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Movie, Video } from 'src/app/models/movies.model';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-movie-hover-card',
@@ -9,11 +12,14 @@ import { Movie } from 'src/app/models/movies.model';
 export class MovieHoverCardComponent implements OnInit {
   @Input() movie!:Movie
 
-  posterBaseUrl = 'https://image.tmdb.org/t/p/w400'
+  posterBaseUrl = 'https://image.tmdb.org/t/p/w400';
 
-  constructor() { }
+  video$!: Observable<Video>
+
+  constructor(private movieService: MoviesService) { }
 
   ngOnInit(): void {
+    this.video$ = this.movieService.getMovieTrailer(this.movie);
   }
 
 }

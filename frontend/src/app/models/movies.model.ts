@@ -14,3 +14,9 @@ export interface Movie {
   video: boolean
   vote_average: number
 }
+
+export interface Video {
+  id: string,
+  key: string,
+  site: string,
+}
