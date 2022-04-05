@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/Movies/movies.model';
+import { Show } from 'src/app/models/Shows/show.model';
 import { MoviesService } from 'src/app/services/movies.service';
+import { ShowsService } from 'src/app/services/shows.service';
 
 @Component({
   selector: 'app-billboard',
@@ -9,14 +11,14 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class BillboardComponent implements OnInit {
 
-  popularMovie!: Movie;
+  popularShow!: Show;
   posterBaseUrl = 'https://image.tmdb.org/t/p/original';
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private showsService: ShowsService) { }
 
   ngOnInit(): void {
-    this.moviesService.getPopularMovies().subscribe(response => {
-      this.popularMovie = response.results[Math.floor(Math.random() * 9) + 10];
+    this.showsService.getPopularShows().subscribe(response => {
+      this.popularShow = response.results[Math.floor(Math.random() * 9) + 10];
     })
   }
 

@@ -2,22 +2,22 @@
 <section class="popular-slider">
   <div
     *ngFor="
-      let movie of popularMovies$ | async | slice: 0:10;
+      let show of popularShows$ | async | slice: 0:10;
       let i = index;
       let last = last
     "
     [ngClass]="{ 'last-child': last }"
   >
     <app-popular-card
-      (mouseover)="hoverMovie = movie"
-      (mouseleave)="hoverMovie = null"
-      [movie]="movie"
+      (mouseover)="hoverShow = show"
+      (mouseleave)="hoverShow = null"
+      [show]="show"
       [rank]="i + 1"
     >
     </app-popular-card>
     <app-movie-hover-card
-      [movie]="movie"
-      [ngClass]="hoverMovie === movie ? 'show-detail' : 'hide-detail'"
+      [show]="show"
+      [ngClass]="hoverShow === show ? 'show-detail' : 'hide-detail'"
     ></app-movie-hover-card>
   </div>
 </section>

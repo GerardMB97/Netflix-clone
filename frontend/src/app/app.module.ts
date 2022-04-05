@@ -13,6 +13,7 @@ import { PopularSliderComponent } from './components/popular-slider/popular-slid
 import { PopularCardComponent } from './components/popular-card/popular-card.component';
 import { MovieHoverCardComponent } from './components/movie-hover-card/movie-hover-card.component';
 import { MovieGenres } from './pipes/movieGenres.pipe';
+import { HttpService } from './services/http.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { MovieGenres } from './pipes/movieGenres.pipe';
   ],
   exports: [
   ],
-  providers: [],
+  providers: [
+    HttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

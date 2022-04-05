@@ -3,6 +3,8 @@ import { Observable, Subject } from 'rxjs';
 import { Movie } from 'src/app/models/Movies/movies.model';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Genre } from 'src/app/models/genres.model';
+import { ShowsService } from 'src/app/services/shows.service';
+import { Show } from 'src/app/models/Shows/show.model';
 
 @Component({
   selector: 'app-popular-slider',
@@ -11,21 +13,15 @@ import { Genre } from 'src/app/models/genres.model';
   encapsulation: ViewEncapsulation.None
 })
 export class PopularSliderComponent implements OnInit {
+
   title = 'Top 10 most popular today'
+  popularShows$!: Observable<Show[]>
+  hoverShow!: null | Show
 
-  popularMovies$!: Observable<Movie[]>
-
-  genres$!: Observable<Genre[]>
-
-  hoverMovie!: null | Movie
-
-  constructor(private moviesService: MoviesService) { }
+  constructor(private showService: ShowsService) { }
+  
   ngOnInit(): void {
-    this.popularMovies$ = this.moviesService.popularMovies$
-    this.genres$= this.moviesService.genres$
-    this.moviesService.getPopularMovies().subscribe()
-    this.moviesService.getTopRatedMovies().subscribe()
-    this.moviesService.getGenres().subscribe()
+    this.popularShows$ = this.showService.popularShows$
   }
 
 }
