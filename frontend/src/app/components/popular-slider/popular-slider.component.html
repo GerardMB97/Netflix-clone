@@ -2,7 +2,7 @@
 <section class="popular-slider">
   <div
     *ngFor="
-      let movie of movies$ | async | slice: 0:10;
+      let movie of popularMovies$ | async | slice: 0:10;
       let i = index;
       let last = last
     "

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HostListener} from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import menuOptions from '../../../assets/constants/menuOptions';
-import { Movie } from 'src/app/models/movies.model';
+import { Movie } from 'src/app/models/Movies/movies.model';
 import { Observable } from 'rxjs';
 
 @Component({

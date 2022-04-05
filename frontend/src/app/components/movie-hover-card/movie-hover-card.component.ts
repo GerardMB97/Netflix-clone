@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Movie, Video } from 'src/app/models/movies.model';
+import { Movie, Video } from 'src/app/models/Movies/movies.model';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
