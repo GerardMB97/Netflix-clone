@@ -1,0 +1,60 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/colors';
+
+.like__box{
+    position: absolute;
+    @include flex(row, space-around, center);
+    width: 120px;
+    height: 45px;
+    background-color: $lighterBackgroundColor;
+    box-shadow: 0px 3px 7px 1px #000000;
+    border-radius: 25px;
+    padding: 0px 5px;
+
+    .love__box{
+        @include flex(row, flex-end, center);
+        position: relative;
+        top: 2px;
+        cursor: pointer;
+    }
+    .love__box:hover{
+        .material-icons-outlined{
+            color: $white;
+        }
+    }
+    .material-icons-outlined{
+        background-color: $lighterBackgroundColor;
+        color: $darkerWhite;
+        border-radius: 50%;
+        z-index: 3;
+        font-size: 20px;
+    }
+    .material-icons-outlined:hover{
+        color: $white;
+        cursor: pointer;
+    }
+    .position--absolute{
+        position: absolute;
+        left: 6px;
+        top: -6px;
+        z-index: 2;
+    }
+    .modal__box{
+        position: absolute;
+        top: -53px;
+        left: -25%;
+    }
+    .modal__box--center{
+        position: absolute;
+        top: -52px;
+        left: 15%;
+    }
+    .modal__box--right{
+        position: absolute;
+        top: -67px;
+        left: -200%;
+    }
+    .display--hidden{
+        display: none;
+    }
+}

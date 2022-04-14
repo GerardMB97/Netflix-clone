@@ -17,11 +17,11 @@ export class PopularSliderComponent implements OnInit {
   title = 'Top 10 most popular today'
   popularShows$!: Observable<Show[]>
   hoverShow!: null | Show
+  isHovering: boolean = false;
 
   constructor(private showService: ShowsService) { }
   
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.popularShows$ = this.showService.popularShows$
   }
-
 }

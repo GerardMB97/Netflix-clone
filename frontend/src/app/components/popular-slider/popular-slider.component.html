@@ -9,15 +9,16 @@
     [ngClass]="{ 'last-child': last }"
   >
     <app-popular-card
-      (mouseover)="hoverShow = show"
-      (mouseleave)="hoverShow = null"
+      (mouseenter)="hoverShow = show"
       [show]="show"
       [rank]="i + 1"
     >
     </app-popular-card>
-    <app-movie-hover-card
-      [show]="show"
-      [ngClass]="hoverShow === show ? 'show-detail' : 'hide-detail'"
-    ></app-movie-hover-card>
+    <div class="hover__card" (mouseleave)="hoverShow = null">
+      <app-movie-hover-card
+        [show]="show"
+        [ngClass]="hoverShow === show ? 'show-detail' : 'hide-detail'"
+      ></app-movie-hover-card>
+    </div>
   </div>
 </section>

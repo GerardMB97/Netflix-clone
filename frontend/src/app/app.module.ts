@@ -14,6 +14,9 @@ import { PopularCardComponent } from './components/popular-card/popular-card.com
 import { MovieHoverCardComponent } from './components/movie-hover-card/movie-hover-card.component';
 import { MovieGenres } from './pipes/movieGenres.pipe';
 import { HttpService } from './services/http.service';
+import { LikeBoxComponent } from './components/like-box/like-box.component';
+import { ModalBoxComponent } from './components/modal-box/modal-box.component';
+import { ShowGenresPipe } from './pipes/show-genres.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { HttpService } from './services/http.service';
     PopularSliderComponent,
     PopularCardComponent,
     MovieHoverCardComponent,
-    MovieGenres
+    MovieGenres,
+    LikeBoxComponent,
+    ModalBoxComponent,
+    ShowGenresPipe
   ],
   imports: [
     BrowserModule,

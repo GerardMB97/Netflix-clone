@@ -1,44 +1,171 @@
 @import '../../../assets/styles/mixins.scss';
 @import '../../../assets/styles/colors';
 
-.short-detail__container{
-  position: relative;
-
 .short-detail{
-  width: 350px;
-  height: 400px;
+  width: 320px;
+  height: 390px;
   border-radius: 5px;
-  overflow: hidden;
   position: absolute;
   top: -300px;
   left: 30px;
-  z-index: 5;
   background-color: $backgroundColor;
   color: $white;
-  pointer-events: none;
   box-shadow: -1px 3px 15px 5px #000000;
   @include flex(column, flex-start, flex-start);
-
-
 
   .short-detail__poster{
     height: 200px;
     overflow: hidden;
 
     img{
-      width: 350px;
+      width: 100%;
       height: auto;
     }
   }
   .short-detail__info{
     height: 200px;
-    @include flex(column, space-around, flex-start);
+    width: 100%;
+    @include flex(column, flex-start, flex-start);
 
+    .info__icons{
+      @include flex(row, space-between, center);
+      margin-top: 15px;
+      width: 100%;
+
+      .icons__left{
+        @include flex(row, space-around, center);
+        width: 49%;
+        margin-left: 15px;
+      }
+
+      .icons__right{
+        @include flex(row, flex-end, center);
+        width: 51%;
+        margin-right: 20px;
+        }
+
+      .icon__container{
+        all: unset;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        border: 2px solid $darkerWhite;
+        @include flex(row, center, center);
+        font-size: 40px;
+        cursor: pointer;
+      }
+
+      .container--white{
+        background-color: $white;
+        color: $backgroundColor;
+        border: 2px solid $white;
+        
+      }
+      .icon__container:hover{
+        border: 2px solid $white;
+      }
+      .container--white:hover{
+        background-color: $darkerWhite;
+        border: 2px solid $darkerWhite;
+      }
+      .material-icons-outlined{
+        font-size: 1.2rem;
+      }
+      .material-icons{
+        font-size: 2.2rem;
+      }
+      .icon--bigger{
+        font-size: 2.1rem;
+      }
+      .like__box{
+        position:relative;
+        left: -90px;
+        top: -22.5px;
+      }
+      .display--hidden{
+        position:relative;
+        left: -102px;
+        top: -22.5px;
+        display: none;
+      }
+      .modal__box{
+        position: relative;
+        font-size: 1rem;
+        top: -75px;
+        left: -83px;
+      }
+      .modal__box--right{
+        position: relative;
+        font-size: 1rem;
+        top: -75px;
+        left: -106px;
+      }
+    }
     .short-detail__title{
       margin-top: 10px;
     }
     p{
       padding-left: 15px;
+    }
+    .match{
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding-left: 20px;
+      color: $green;
+    }
+
+    .info__box{
+      @include flex(row, flex-start, center);
+      padding-left: 20px;
+      margin-top: 10px;
+      .age{
+        background-color: $orange;
+        border-radius: 3px;
+        padding: 0px 5px;
+        font-size: 0.9rem;
+      }
+
+      .seasons{
+        margin-left: 10px;
+      }
+
+      .hd{
+        border: 1px solid $darkerWhite;
+        font-size: 0.8rem;
+        padding: 0px 6px;
+        border-radius: 3px;
+        margin-left: 10px;
+        color: $darkerWhite;
+      }
+    }
+    .genres{
+      all: unset;
+      padding-left: 20px;
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      span{
+        all: unset;
+        margin-right: 15px;
+        margin-bottom: 5px;
+        word-break: keep-all;
+        &:after{
+          content: "";
+          display: inline-flex;
+          border-radius: 50%;
+          height: 5px;
+          width: 5px;
+          background-color: $grayHover;
+          position: relative;
+          left: 7px;
+          top: -2px;
+        }
+      }
+      .last-child{
+        &:after{
+          display: none;
+        }
+      }
     }
 
     ul{
@@ -59,4 +186,3 @@
     }
   }
 }
-  }

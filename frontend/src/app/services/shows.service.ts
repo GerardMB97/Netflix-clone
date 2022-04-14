@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ShowResponse } from '../models/Shows/show-response.model';
 import { Show } from '../models/Shows/show.model';
@@ -28,6 +28,14 @@ export class ShowsService {
       )
     )
   }
+
+  public getShowTrailer({id}:Show) : Observable<any> {
+    return this.http.get<any>(`https://api.themoviedb.org/3/tv/${id}/videos`, { params: { api_key: environment.api_key } })
+    .pipe(
+      map((results:any) => {console.log(results) ;results.results[0]})
+    )
+  }
+
   private getShowList(path: string): Observable<ShowResponse> {
     const endpoint: string = ShowsService._apiDomain + path;
     return this.http.get<any>(endpoint, { params: { api_key: ShowsService._apiKey } })

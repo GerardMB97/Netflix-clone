@@ -16,7 +16,6 @@ export class MoviesService {
   private static readonly _apiKey: string = environment.api_key;
   private static readonly _apiDomain: string = environment.api_domain;
   private static readonly _popularPath: string = 'tv/popular';
-  private static readonly _genresEndpoint = MoviesService._apiDomain + 'genre/movie/list'
   get popularPath(): string {
      return MoviesService._popularPath
   }
@@ -24,7 +23,6 @@ export class MoviesService {
 
   popularMovies$ = new Subject<Movie[]>();
   topRatedMovies$ = new Subject<Movie[]>();
-  genres$ = new Subject<Genre[]>();
   video$ = new Subject<Video>();
 
   constructor(private http: HttpClient, private httpHelper: HttpService) { }
@@ -34,16 +32,6 @@ export class MoviesService {
     .pipe(
       tap(
         response =>  {console.log(response); this.popularMovies$.next(response.results)},
-        err => (this.httpHelper.handleError(err))
-      )
-    )
-  }
-
-  getGenres() : Observable<any> {
-    return this.http.get<any>(MoviesService._genresEndpoint, { params: { api_key: MoviesService._apiKey } })
-    .pipe(
-      tap(
-        genres => {console.log('ls genres', genres.genres); this.genres$.next(genres.genres)},
         err => (this.httpHelper.handleError(err))
       )
     )

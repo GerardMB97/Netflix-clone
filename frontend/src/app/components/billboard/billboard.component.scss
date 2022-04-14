@@ -15,7 +15,7 @@
     width: 35%;
     height: 80%;
     padding-left: 4vw;
-    padding-top: 20%;
+    padding-top: 15vw;
     color: white;
 
     h2 {
@@ -23,9 +23,18 @@
       white-space: nowrap;
     }
 
+    p{
+      height: 15vh;
+      margin-top: 2vw;
+      overflow-y: scroll;
+    }
+    p::-webkit-scrollbar {
+      display: none;
+    }
+
     .button-container{
       @include flex(row, flex-start, center);
-      padding-top: 3%;
+      padding-top: 2vw;
     }
 
     button:hover{
@@ -70,3 +79,65 @@
     }
   }
 }
+
+@media screen and (max-width: 1150px){
+  .billboard{
+    .left-column{
+      padding-top: 8vw;
+
+      p{
+        margin-top: 1vw;
+        height: 12vw;
+      }
+    }
+  }
+}
+@media screen and (max-width: 650px){
+  .billboard{
+
+    .left-column{
+      padding-top: 10vw;
+      h2{
+        font-size: 2rem;
+      }
+      p{
+        font-size: 0.5rem;
+      }
+      
+    button {
+      all: unset;
+      width: calc(6vw + 90px);
+      height: 20px;
+      font-size: 0.8rem;
+      padding-bottom: 2px;
+      background-color: $darkerWhite;
+      border-radius: 3px;
+      margin-right: 5px;
+      color: black;
+      @include flex(row, center, center);
+
+      .right-arrow {
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 8px solid $black;
+        margin-left: -5px;
+        margin-right: 5px;
+      }
+
+      .material-icons-outlined{
+        margin-left: -5px;
+        margin-right: 5px;
+        font-size: 1rem;
+      }
+    }
+    .button--larger{
+      width: calc(8vw + 120px);
+      color: $darkerWhite;
+      background-color: $transparentGray;
+    }
+    }
+  }
+}
+

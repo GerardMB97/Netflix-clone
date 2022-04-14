@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/Movies/movies.model';
 import { Show } from 'src/app/models/Shows/show.model';
-import { MoviesService } from 'src/app/services/movies.service';
 import { ShowsService } from 'src/app/services/shows.service';
 
 @Component({

@@ -4,12 +4,13 @@ import { map } from 'rxjs/operators';
 import { GenresService } from '../services/genres.service';
 
 @Pipe({
-  name: 'genres'
+  name: 'showGenres'
 })
-
-export class MovieGenres implements PipeTransform {
+export class ShowGenresPipe implements PipeTransform {
 
   genres$ = this.genresService.genres$
+
+  constructor(private genresService: GenresService) { }
 
   transform(movieGenres: number[]):Observable<string[]>{
     return this.genres$.pipe(
@@ -17,6 +18,4 @@ export class MovieGenres implements PipeTransform {
       )
   }
 
-
-  constructor(private genresService: GenresService) { }
 }

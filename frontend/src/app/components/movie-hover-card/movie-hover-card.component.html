@@ -1,17 +1,50 @@
-<div class="short-detail__container">
-  <div class="short-detail">
-    <div class="short-detail__poster">
-      <img [src]="posterBaseUrl + show.backdrop_path" alt="" />
+<div class="short-detail">
+  <div class="short-detail__poster">
+    <img [src]="posterBaseUrl + show.backdrop_path" alt="" />
+  </div>
+  <div class="short-detail__info">
+    <div class="info__icons">
+      <div class="icons__left">
+        <button class="icon__container container--white">
+          <span class="material-icons">play_arrow</span>
+        </button>
+        <button (mouseenter)="mouseOverIndex = 1" (mouseleave)="mouseOverIndex = 0" class="icon__container">
+          <span class="material-icons-outlined icon--bigger">add</span>
+          <app-modal-box
+          [ngClass]="mouseOverIndex === 1? 'modal__box' : 'display--hidden'"
+          (mouseleave)="mouseOverIndex = 0"
+          [text]="'Añadir a mi lista'">
+          </app-modal-box>
+        </button>
+        <div (mouseenter)="isLikeBoxActive = true">
+          <button class="icon__container">
+            <span class="material-icons-outlined">thumb_up</span>
+          </button>
+      </div>
+        <app-like-box (mouseleave)="isLikeBoxActive = false" [ngClass]="isLikeBoxActive === true? 'like__box' : 'display--hidden'"></app-like-box>
+      </div>
+      <div class="icons__right">
+        <button (mouseenter)="mouseOverIndex = 2" (mouseleave)="mouseOverIndex = 0" class="icon__container">
+          <span class="material-icons">keyboard_arrow_down</span>
+          <app-modal-box
+          [ngClass]="mouseOverIndex === 2? 'modal__box--right' : 'display--hidden'"
+          [text]="'Episodios e información'">
+          </app-modal-box>
+        </button>
+      </div>
     </div>
-    <div class="short-detail__info">
-      <p>release date: {{ show.first_air_date }}</p>
-      <ul>
-        <span>Genres :</span>
-        <p>{{ (video$ | async)?.id }}</p>
-        <li *ngFor="let genre of show.genre_ids | genres | async">
-          {{ genre }}
-        </li>
+    <span class="match">93 % de coincidencia</span>
+    <div class="info__box">
+      <span class="age">16+</span>
+      <span class="seasons">2 temporadas</span>
+      <span class="hd">HD</span>
+    </div>
+    <li class="genres" >
+      <ul >
+        <span *ngFor="let genre of show.genre_ids | showGenres | async; let last = last" [ngClass]="{'last-child': last}">{{ genre }}</span>
       </ul>
-    </div>
+    </li>
   </div>
 </div>
+
+

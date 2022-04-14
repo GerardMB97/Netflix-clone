@@ -1,0 +1,37 @@
+<div class="like__box">
+    <div>
+        <app-modal-box
+        [ngClass]="mouseOverIndex === 1? 'modal__box' : 'display--hidden'"
+        (mouseleave)="mouseOverIndex = 0"
+        [text]="'No es para mí'">
+        </app-modal-box>
+        <span 
+        (mouseover)="mouseOverIndex = 1" 
+        class="material-icons-outlined">
+        thumb_down
+        </span>
+    </div>
+    <div>
+        <app-modal-box 
+        [ngClass]="mouseOverIndex === 2? 'modal__box' : 'display--hidden'"
+        (mouseleave)="mouseOverIndex = 0" 
+        class="modal__box--center" 
+        [text]="'Me gusta'">
+        </app-modal-box>
+        <span 
+        (mouseover)="mouseOverIndex = 2" 
+        class="material-icons-outlined">
+        thumb_up
+        </span>
+    </div>
+   
+    <div class="love__box" (mouseover)="mouseOverIndex = 3" >
+        <app-modal-box [ngClass]="mouseOverIndex === 3? 'modal__box' : 'display--hidden'" 
+        (mouseleave)="mouseOverIndex = 0" 
+        class="modal__box--right" 
+        [text]="'¡Me encanta!'">
+        </app-modal-box>
+        <span class="material-icons-outlined">thumb_up</span>
+        <span class="material-icons-outlined position--absolute">thumb_up</span>
+    </div>
+</div>
